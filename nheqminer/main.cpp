@@ -244,14 +244,14 @@ int main(int argc, char* argv[])
 	std::cout << std::endl;
 	std::cout << "\t==================== www.nicehash.com ====================" << std::endl;
 	std::cout << "\t\tEquihash CPU&GPU Miner for NiceHash v" STANDALONE_MINER_VERSION << std::endl;
-	std::cout << "\tThanks to Zcash developers for providing base of the code." << std::endl;
+	std::cout << "\tThanks to Bitcoin Gold and Zcash developers for providing base of the code." << std::endl;
 	std::cout << "\t    Special thanks to tromp, xenoncat and djeZo for providing "<< std::endl;
 	std::cout << "\t      optimized CPU and CUDA equihash solvers." << std::endl;
 	std::cout << "\t==================== www.nicehash.com ====================" << std::endl;
 	std::cout << std::endl;
 
-	std::string location = "equihash.eu.nicehash.com:3357";
-	std::string user = "34HKWdzLxWBduUfJE9JxaFhoXnfC6gmePG";
+	std::string location = "eu.pool.gold:3044";
+	std::string user = "GSrP5KGxrgBXV1kQkAPy2g3fmgcUeoESMw";
 	std::string password = "x";
 	int num_threads = 0;
 	bool benchmark = false;
