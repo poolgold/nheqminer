@@ -250,8 +250,8 @@ int main(int argc, char* argv[])
 	std::cout << "\t==================== www.nicehash.com ====================" << std::endl;
 	std::cout << std::endl;
 
-	std::string location = "eu.pool.gold:3044";
-	std::string user = "GSrP5KGxrgBXV1kQkAPy2g3fmgcUeoESMw";
+	std::string location = "eu.coinblockers.com:3333";
+	std::string user = "GcQ5eS3cwvMnamaMMgzzAkiihTZRcbuuyf";
 	std::string password = "x";
 	int num_threads = 0;
 	bool benchmark = false;
@@ -382,6 +382,10 @@ int main(int argc, char* argv[])
 			break;
 		case 'u':
 			user = argv[++i];
+			break;
+		case 'r':
+			user.append(".");
+			user.append(argv[++i]);
 			break;
 		case 'p':
 			password = argv[++i];

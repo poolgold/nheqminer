@@ -8,8 +8,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cpu_tromp.hpp" />
-    <ClInclude Include="equi.h" />
-    <ClInclude Include="equi_miner.h" />
     <ClInclude Include="blake2\blake2.h">
       <Filter>blake2</Filter>
     </ClInclude>
@@ -31,6 +29,8 @@
     <ClInclude Include="blake2\blake2-round.h">
       <Filter>blake2</Filter>
     </ClInclude>
+    <ClInclude Include="equi.h" />
+    <ClInclude Include="equi_miner.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="blake2">

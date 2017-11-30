@@ -1,0 +1,7 @@
+USEUNIT("mw_screensaver_windows.cpp");
+USERC("mw_screensaver_windows.rc");
+//---------------------------------------------------------------------------
+This file is used by the project manager only and should be treated like the project file
+
+
+WinMain

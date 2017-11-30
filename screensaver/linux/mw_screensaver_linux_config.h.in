@@ -1,0 +1,152 @@
+/* mw_screensaver_linux_config.h.in.  Generated from configure.in by autoheader.  */
+
+/* Set to 1 if the compile is GNU GCC. */
+#undef COMPILER_IS_GCC
+
+/* Major version of GCC or 3 otherwise. */
+#undef GCC_MAJOR_VERSION
+
+/* Define to 1 if you have the <bzlib.h> header file. */
+#undef HAVE_BZLIB_H
+
+/* Define to 1 if you have the <dlfcn.h> header file. */
+#undef HAVE_DLFCN_H
+
+/* Define to 1 if you have the `getopt' function. */
+#undef HAVE_GETOPT
+
+/* Define to 1 if you have the <getopt.h> header file. */
+#undef HAVE_GETOPT_H
+
+/* Define to 1 if you have the `gettimeofday' function. */
+#undef HAVE_GETTIMEOFDAY
+
+/* GLEW is available for use. */
+#undef HAVE_GLEW
+
+/* Define to 1 if you have the <GL/glew.h> header file. */
+#undef HAVE_GL_GLEW_H
+
+/* Define to 1 if you have the <GL/glut.h> header file. */
+#undef HAVE_GL_GLUT_H
+
+/* Define to 1 if you have the <GL/glu.h> header file. */
+#undef HAVE_GL_GLU_H
+
+/* Define to 1 if you have the <GL/gl.h> header file. */
+#undef HAVE_GL_GL_H
+
+/* ImageMagick is available for use. */
+#undef HAVE_IMAGEMAGICK
+
+/* Define to 1 if you have the <inttypes.h> header file. */
+#undef HAVE_INTTYPES_H
+
+/* libbz2 exists. */
+#undef HAVE_LIBBZ2
+
+/* Define to 1 if you have the `clntst9' library (-lclntst9). */
+#undef HAVE_LIBCLNTST9
+
+/* Define to 1 if you have the `GL' library (-lGL). */
+#undef HAVE_LIBGL
+
+/* Define to 1 if you have the `GLU' library (-lGLU). */
+#undef HAVE_LIBGLU
+
+/* Define to 1 if you have the `m' library (-lm). */
+#undef HAVE_LIBM
+
+/* Define to 1 if you have the `Magick' library (-lMagick). */
+#undef HAVE_LIBMAGICK
+
+/* Define to 1 if you have the `MesaGL' library (-lMesaGL). */
+#undef HAVE_LIBMESAGL
+
+/* Define to 1 if you have the `MesaGLU' library (-lMesaGLU). */
+#undef HAVE_LIBMESAGLU
+
+/* Define to 1 if you have the `metawrap_client' library (-lmetawrap_client).
+   */
+#undef HAVE_LIBMETAWRAP_CLIENT
+
+/* Define to 1 if you have the `rt' library (-lrt). */
+#undef HAVE_LIBRT
+
+/* Define to 1 if you have the <magick/api.h> header file. */
+#undef HAVE_MAGICK_API_H
+
+/* Define to 1 if you have the <memory.h> header file. */
+#undef HAVE_MEMORY_H
+
+/* Define to 1 if you have the `nanosleep' function. */
+#undef HAVE_NANOSLEEP
+
+/* pthreads is available for use. */
+#undef HAVE_PTHREADS
+
+/* Define to 1 if you have the `pthread_create' function. */
+#undef HAVE_PTHREAD_CREATE
+
+/* Define to 1 if you have the <pthread.h> header file. */
+#undef HAVE_PTHREAD_H
+
+/* Define to 1 if you have the <SDL/SDL.h> header file. */
+#undef HAVE_SDL_SDL_H
+
+/* Define to 1 if you have the <stdint.h> header file. */
+#undef HAVE_STDINT_H
+
+/* Define to 1 if you have the <stdlib.h> header file. */
+#undef HAVE_STDLIB_H
+
+/* Define to 1 if you have the <strings.h> header file. */
+#undef HAVE_STRINGS_H
+
+/* Define to 1 if you have the <string.h> header file. */
+#undef HAVE_STRING_H
+
+/* Define to 1 if you have the <sys/stat.h> header file. */
+#undef HAVE_SYS_STAT_H
+
+/* Define to 1 if you have the <sys/types.h> header file. */
+#undef HAVE_SYS_TYPES_H
+
+/* Define to 1 if you have the <unistd.h> header file. */
+#undef HAVE_UNISTD_H
+
+/* Define to 1 if you have the <X11/Intrinsic.h> header file. */
+#undef HAVE_X11_INTRINSIC_H
+
+/* Name of package */
+#undef PACKAGE
+
+/* Define to the address where bug reports for this package should be sent. */
+#undef PACKAGE_BUGREPORT
+
+/* Define to the full name of this package. */
+#undef PACKAGE_NAME
+
+/* Define to the full name and version of this package. */
+#undef PACKAGE_STRING
+
+/* Define to the one symbol short name of this package. */
+#undef PACKAGE_TARNAME
+
+/* Define to the version of this package. */
+#undef PACKAGE_VERSION
+
+/* Define to 1 if you have the ANSI C header files. */
+#undef STDC_HEADERS
+
+/* Define to 1 if you can safely include both <sys/time.h> and <time.h>. */
+#undef TIME_WITH_SYS_TIME
+
+/* 3DNow is available. */
+#undef USE_3DNOW
+
+/* SSE is available. */
+#undef USE_SSE
+
+/* Version number of package */
+#undef VERSION

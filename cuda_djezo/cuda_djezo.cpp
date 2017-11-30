@@ -10,7 +10,7 @@ struct proof;
 #include "eqcuda.hpp"
 
 
-cuda_djezo::cuda_djezo(int platf_id, int dev_id)
+SOLVER_NAME::SOLVER_NAME(int platf_id, int dev_id)
 {
 	device_id = dev_id;
 	getinfo(0, dev_id, m_gpu_name, m_sm_count, m_version);
@@ -28,7 +28,8 @@ cuda_djezo::cuda_djezo(int platf_id, int dev_id)
 		{
 			throw std::runtime_error("Only CUDA devices with SM 5.0 and higher are supported.");
 		}
-		else if (major == 5 && minor == 0)
+		 else 
+		if (major == 5 && minor == 0)
 		{
 			combo_mode = 2;
 		}
@@ -38,20 +39,20 @@ cuda_djezo::cuda_djezo(int platf_id, int dev_id)
 }
 
 
-std::string cuda_djezo::getdevinfo()
+std::string SOLVER_NAME::getdevinfo()
 {
 	return m_gpu_name + " (#" + std::to_string(device_id) + ") M=" + std::to_string(combo_mode);
 }
 
 
-int cuda_djezo::getcount()
+int SOLVER_NAME::getcount()
 {
 	int device_count;
 	checkCudaErrors(cudaGetDeviceCount(&device_count));
 	return device_count;
 }
 
-void cuda_djezo::getinfo(int platf_id, int d_id, std::string& gpu_name, int& sm_count, std::string& version)
+void SOLVER_NAME::getinfo(int platf_id, int d_id, std::string& gpu_name, int& sm_count, std::string& version)
 {
 	//int runtime_version;
 	//checkCudaErrors(cudaRuntimeGetVersion(&runtime_version));
@@ -66,7 +67,7 @@ void cuda_djezo::getinfo(int platf_id, int d_id, std::string& gpu_name, int& sm_
 }
 
 
-void cuda_djezo::start(cuda_djezo& device_context)
+void SOLVER_NAME::start(SOLVER_NAME& device_context)
 { 
 	switch (device_context.combo_mode)
 	{
@@ -86,7 +87,7 @@ void cuda_djezo::start(cuda_djezo& device_context)
 	}
 }
 
-void cuda_djezo::stop(cuda_djezo& device_context)
+void SOLVER_NAME::stop(SOLVER_NAME& device_context)
 { 
 	if (device_context.context)
 	{
@@ -95,14 +96,14 @@ void cuda_djezo::stop(cuda_djezo& device_context)
 	}
 }
 
-void cuda_djezo::solve(const char *tequihash_header,
+void SOLVER_NAME::solve(const char *tequihash_header,
 	unsigned int tequihash_header_len,
 	const char* nonce,
 	unsigned int nonce_len,
 	std::function<bool()> cancelf,
 	std::function<void(const std::vector<uint32_t>&, size_t, const unsigned char*)> solutionf,
 	std::function<void(void)> hashdonef,
-	cuda_djezo& device_context)
+	SOLVER_NAME& device_context)
 {
 	device_context.context->solve(tequihash_header,
 		tequihash_header_len,

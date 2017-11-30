@@ -424,3 +424,5 @@ build
 !3rdparty/**
 !cpu_xenoncat/asm/**
 cpu_xenoncat/asm/*.obj
+autom4te.cache
+

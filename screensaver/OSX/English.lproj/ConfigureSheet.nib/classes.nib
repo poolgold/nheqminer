@@ -1,0 +1,33 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = ScreenSaverView; LANGUAGE = ObjC; SUPERCLASS = NSView; }, 
+        {
+            ACTIONS = {
+                closeSheet = id; 
+                reset = id; 
+                setFocus = id; 
+                setMagnification = id; 
+                setResolution = id; 
+                setSpeed = id; 
+            }; 
+            CLASS = "mw_screensaver_osx_view"; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                "IBconfigureSheet_" = id; 
+                "IBfocusSlider_" = id; 
+                "IBfocusText_" = id; 
+                "IBmagnificationSlider_" = id; 
+                "IBmagnificationText_" = id; 
+                "IBmainScreen_" = id; 
+                "IBresolutionSlider_" = id; 
+                "IBresolutionText_" = id; 
+                "IBspeedSlider_" = id; 
+                "IBspeedText_" = id; 
+                "IBversion_" = id; 
+            }; 
+            SUPERCLASS = ScreenSaverView; 
+        }
+    ); 
+    IBVersion = 1; 
+}

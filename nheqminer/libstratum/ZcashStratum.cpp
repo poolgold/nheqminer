@@ -619,7 +619,7 @@ bool benchmark_solve_equihash(const CBlock& pblock, const char *tequihash_header
 
 int benchmark_thread(int tid, ISolver *solver)
 {
-	BOOST_LOG_TRIVIAL(debug) << "Thread #" << tid << " started (" << solver->getname() << ")";
+	BOOST_LOG_TRIVIAL(info) << "Thread #" << tid << " started (" << solver->getname() << ")";
 
 	try
 	{
@@ -644,7 +644,7 @@ int benchmark_thread(int tid, ISolver *solver)
 		return 0;
 	}
 
-	BOOST_LOG_TRIVIAL(debug) << "Thread #" << tid << " ended (" << solver->getname() << ")";
+	BOOST_LOG_TRIVIAL(info) << "Thread #" << tid << " ended (" << solver->getname() << ")";
 
 	return 0;
 }
@@ -663,6 +663,8 @@ void Solvers_doBenchmark(int hashes, const std::vector<ISolver *> &solvers) {
 	benchmark_solutions = 0;
 
 	size_t total_hashes = benchmark_nonces.size();
+
+	BOOST_LOG_TRIVIAL(info) << "Benchmark with " << solvers.size() << " solvers.";
 
 	// log what is benchmarking
 	for (ISolver* solver : solvers) {
@@ -685,12 +687,15 @@ void Solvers_doBenchmark(int hashes, const std::vector<ISolver *> &solvers) {
 	for (int i = 0; i < solvers.size(); ++i) {
 		bthreads[i] = std::thread(boost::bind(&benchmark_thread, i, solvers[i]));
     }
+
+	/*
 #ifdef WIN32
     // TODO get back to this sleep
     Sleep(1000);
 #else
     sleep(1);
 #endif
+	*/
 
 	BOOST_LOG_TRIVIAL(info) << "Benchmark starting... this may take several minutes, please wait...";
 

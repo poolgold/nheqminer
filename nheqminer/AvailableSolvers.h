@@ -3,7 +3,6 @@
 #include "Solver.h"
 #include "SolverStub.h"
 
-
 #ifdef USE_CPU_TROMP
 #include "../cpu_tromp/cpu_tromp.hpp"
 #else
