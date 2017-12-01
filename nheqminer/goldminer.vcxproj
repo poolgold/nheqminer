@@ -11,14 +11,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{6FF7D209-05A3-4550-93CC-211D33503719}</ProjectGuid>
+    <ProjectGuid>{A8019A3C-548B-4DA8-80BB-7649C7768B18}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>nheqminer</RootNamespace>
+    <RootNamespace>goldminer</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
@@ -44,6 +44,8 @@
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>$(SolutionDir);$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration)\;$(SolutionDir)libs\win64;$(LibraryPath)</LibraryPath>
+    <OutDir>lib\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -57,7 +59,7 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;USE_CUDA_TROMP;USE_CUDA_DJEZO;USE_CPU_TROMP;USE_CPU_XENONCAT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_LIB;WIN32;_DEBUG;_CONSOLE;USE_CUDA_TROMP;USE_CUDA_DJEZO;USE_CPU_TROMP;USE_CPU_XENONCAT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalOptions>-D_WIN32_WINNT=0x0601 %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4068;4996;4503;4267;4180;4290;4244;4800;4334;4251</DisableSpecificWarnings>
       <MultiProcessorCompilation>false</MultiProcessorCompilation>
@@ -76,6 +78,10 @@
       </IgnoreSpecificDefaultLibraries>
       <AdditionalLibraryDirectories>.\trompequihash\pthreads\x64;..\3rdparty\libs\win64;$(AMDAPPSDKROOT)\lib\x86_64\</AdditionalLibraryDirectories>
     </Link>
+    <Lib>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -166,7 +172,6 @@
     <ClCompile Include="json\json_spirit_writer.cpp" />
     <ClCompile Include="libstratum\StratumClient.cpp" />
     <ClCompile Include="libstratum\ZcashStratum.cpp" />
-    <ClCompile Include="main.cpp" />
     <ClCompile Include="MinerFactory.cpp" />
     <ClCompile Include="primitives\block.cpp" />
     <ClCompile Include="speed.cpp" />
@@ -174,6 +179,12 @@
     <ClCompile Include="utilstrencodings.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\blake2\blake2.vcxproj">
+      <Project>{e122c4d6-4fb8-4b69-a5fe-fd3680b869fd}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\cpu_tromp\cpu_tromp.vcxproj">
       <Project>{6c180164-4dbe-45d7-85e0-7bdfacf3fc7b}</Project>
     </ProjectReference>
@@ -189,12 +200,6 @@
     <ProjectReference Include="..\cuda_tromp\cuda_tromp.vcxproj">
       <Project>{33c2b469-f025-4223-b9b6-e69d42fea7d6}</Project>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Library Include="..\3rdparty\libs\win64\pthreadVC2.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
