@@ -10,98 +10,9 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="amount.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="api.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="arith_uint256.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="crypto\sha256.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="json\json_spirit_reader.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="json\json_spirit_value.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="json\json_spirit_writer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="libstratum\StratumClient.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="libstratum\ZcashStratum.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MinerFactory.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="primitives\block.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="speed.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="uint256.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="utilstrencodings.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\cpu_tromp\cpu_tromp.hpp" />
-    <ClInclude Include="..\cpu_xenoncat\cpu_xenoncat.hpp" />
-    <ClInclude Include="..\cuda_djezo\cuda_djezo.hpp" />
-    <ClInclude Include="..\cuda_tromp\cuda_tromp.hpp" />
-    <ClInclude Include="..\ocl_xpm\ocl_xmp.hpp" />
-    <ClInclude Include="amount.h" />
-    <ClInclude Include="api.hpp" />
-    <ClInclude Include="arith_uint256.h" />
-    <ClInclude Include="AvailableSolvers.h" />
-    <ClInclude Include="compat\byteswap.h" />
-    <ClInclude Include="compat\endian.h" />
-    <ClInclude Include="crypto\common.h" />
-    <ClInclude Include="crypto\sha256.h" />
-    <ClInclude Include="hash.h" />
-    <ClInclude Include="json\json_spirit.h" />
-    <ClInclude Include="json\json_spirit_error_position.h" />
-    <ClInclude Include="json\json_spirit_reader.h" />
-    <ClInclude Include="json\json_spirit_reader_template.h" />
-    <ClInclude Include="json\json_spirit_stream_reader.h" />
-    <ClInclude Include="json\json_spirit_utils.h" />
-    <ClInclude Include="json\json_spirit_value.h" />
-    <ClInclude Include="json\json_spirit_writer.h" />
-    <ClInclude Include="json\json_spirit_writer_template.h" />
-    <ClInclude Include="libstratum\StratumClient.h" />
-    <ClInclude Include="libstratum\ZcashStratum.h" />
-    <ClInclude Include="MinerFactory.h" />
-    <ClInclude Include="primitives\block.h" />
-    <ClInclude Include="primitives\transaction.h" />
-    <ClInclude Include="script\script.h" />
-    <ClInclude Include="serialize.h" />
-    <ClInclude Include="Solver.h" />
-    <ClInclude Include="ISolver.h" />
-    <ClInclude Include="SolverStub.h" />
-    <ClInclude Include="speed.hpp" />
-    <ClInclude Include="streams.h" />
-    <ClInclude Include="support\allocators\zeroafterfree.h" />
-    <ClInclude Include="tinyformat.h" />
-    <ClInclude Include="uint252.h" />
-    <ClInclude Include="uint256.h" />
-    <ClInclude Include="utilstrencodings.h" />
-    <ClInclude Include="version.h" />
-    <ClInclude Include="zcash\JoinSplit.hpp" />
-    <ClInclude Include="zcash\NoteEncryption.hpp" />
-    <ClInclude Include="zcash\Proof.hpp" />
-    <ClInclude Include="zcash\Zcash.h" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\3rdparty\libs\win64\pthreadVC2.lib" />
