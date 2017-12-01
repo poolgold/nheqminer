@@ -175,20 +175,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="blake2\blake2bx.cpp" />
     <ClCompile Include="cpu_tromp.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="blake2\blake2-config.h" />
-    <ClInclude Include="blake2\blake2-impl.h" />
-    <ClInclude Include="blake2\blake2-round.h" />
-    <ClInclude Include="blake2\blake2.h" />
-    <ClInclude Include="blake2\blake2b-load-sse2.h" />
-    <ClInclude Include="blake2\blake2b-load-sse41.h" />
-    <ClInclude Include="blake2\blake2b-round.h" />
     <ClInclude Include="cpu_tromp.hpp" />
     <ClInclude Include="equi.h" />
     <ClInclude Include="equi_miner.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\blake2\blake2.vcxproj">
+      <Project>{e122c4d6-4fb8-4b69-a5fe-fd3680b869fd}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

@@ -23,7 +23,6 @@
     <ClInclude Include="eqcuda.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\cpu_tromp\blake2\blake2bx.cpp" />
     <ClCompile Include="cuda_tromp.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -31,6 +30,11 @@
       <CodeGeneration>compute_52,sm_52;compute_50,sm_50</CodeGeneration>
       <CodeGeneration Condition="'$(Configuration)|$(Platform)'=='Debug7.5|x64'">compute_20,sm_21;</CodeGeneration>
     </CudaCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\blake2\blake2.vcxproj">
+      <Project>{e122c4d6-4fb8-4b69-a5fe-fd3680b869fd}</Project>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{33C2B469-F025-4223-B9B6-E69D42FEA7D6}</ProjectGuid>
@@ -60,7 +64,7 @@
     <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug7.5|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset>v140</PlatformToolset>

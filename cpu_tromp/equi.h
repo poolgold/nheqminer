@@ -3,7 +3,7 @@
 // Copyright (c) 2016-2016 John Tromp
 
 
-#include "blake2/blake2.h"
+#include "../blake2/blake2.h"
 #ifdef __APPLE__
 #include "osx_barrier.h"
 #include <machine/endian.h>

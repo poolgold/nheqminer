@@ -182,9 +182,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\blake2\blake2.vcxproj">
-      <Project>{e122c4d6-4fb8-4b69-a5fe-fd3680b869fd}</Project>
-    </ProjectReference>
     <ProjectReference Include="..\cpu_tromp\cpu_tromp.vcxproj">
       <Project>{6c180164-4dbe-45d7-85e0-7bdfacf3fc7b}</Project>
     </ProjectReference>

@@ -2,18 +2,10 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="cpu_tromp.cpp" />
-    <ClCompile Include="blake2\blake2bx.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cpu_tromp.hpp" />
     <ClInclude Include="equi.h" />
     <ClInclude Include="equi_miner.h" />
-    <ClInclude Include="blake2\blake2-config.h" />
-    <ClInclude Include="blake2\blake2-impl.h" />
-    <ClInclude Include="blake2\blake2-round.h" />
-    <ClInclude Include="blake2\blake2.h" />
-    <ClInclude Include="blake2\blake2b-load-sse2.h" />
-    <ClInclude Include="blake2\blake2b-load-sse41.h" />
-    <ClInclude Include="blake2\blake2b-round.h" />
   </ItemGroup>
 </Project>

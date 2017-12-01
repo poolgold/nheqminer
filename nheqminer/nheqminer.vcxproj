@@ -63,11 +63,15 @@
       <MultiProcessorCompilation>false</MultiProcessorCompilation>
       <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
       <AdditionalIncludeDirectories>$(AMDAPPSDKROOT)\include\;..\3rdparty\include;$(CUDA_PATH)\include</AdditionalIncludeDirectories>
+      <FavorSizeOrSpeed>Neither</FavorSizeOrSpeed>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <EnableParallelCodeGeneration>false</EnableParallelCodeGeneration>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>cuda_tromp_75.lib;cpu_xenoncat.lib;cpu_tromp_SSE2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>%CUDA_PATH%\lib\x64\cudart_static.lib;cuda_tromp_75.lib;cpu_xenoncat.lib;cpu_tromp_SSE2.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreAllDefaultLibraries>
       </IgnoreAllDefaultLibraries>
       <LargeAddressAware>
@@ -174,6 +178,12 @@
     <ClCompile Include="utilstrencodings.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\3rdparty\libs\win64\pthreadVC2.lib" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\cpu_tromp\cpu_tromp.vcxproj">
       <Project>{6c180164-4dbe-45d7-85e0-7bdfacf3fc7b}</Project>
     </ProjectReference>
@@ -189,12 +199,6 @@
     <ProjectReference Include="..\cuda_tromp\cuda_tromp.vcxproj">
       <Project>{33c2b469-f025-4223-b9b6-e69d42fea7d6}</Project>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Library Include="..\3rdparty\libs\win64\pthreadVC2.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
