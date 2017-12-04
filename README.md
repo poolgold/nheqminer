@@ -1,3 +1,14 @@
+# BTG, ZEC, ZCL, ZEN, BitcoinZ Miner from Nicehash
+## Optimized and edited for BTG by Starbuck, DrMiaow
+Donations:
+BTG Starbuck: ALk5mWvwpBozgeBieayrTrmnKBH3kPYUhj
+BTG DrMiaow: GQubYakjr6Ap4kq9XAdsqxeYvu6m45GmRe
+
+BTC Starbuck: 12Yc3Ezayhnm4X9x3nxV7vWY1h2qpWgajc
+BTC DrMiaow: 1LHSWFPEeXuZXZ43nUs1bmpipcKyJejCV4
+
+ZEC: t1Ud3BzQUcHrPxtrGgDsuT65qTkZLrXbrZ2
+
 # Build instructions:
 
 ### Dependencies:
