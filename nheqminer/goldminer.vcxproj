@@ -22,13 +22,15 @@
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -44,14 +46,16 @@
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>$(SolutionDir);$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration)\;$(SolutionDir)libs\win64;$(LibraryPath)</LibraryPath>
-    <OutDir>lib\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <OutDir>$(ProjectDir)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)\$(Platform)\Intermediate\$(ProjectName)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>$(SolutionDir);$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration)\;$(SolutionDir)libs\win64;$(LibraryPath)</LibraryPath>
     <TargetName>$(ProjectName)</TargetName>
+    <OutDir>$(ProjectDir)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)\$(Platform)\Intermediate\$(ProjectName)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -59,12 +63,14 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_LIB;WIN32;_DEBUG;_CONSOLE;USE_CUDA_TROMP;USE_CUDA_DJEZO;USE_CPU_TROMP;USE_CPU_XENONCAT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN64;_LIB;WIN32;_DEBUG;_CONSOLE;USE_CUDA_TROMP;USE_CUDA_DJEZO;USE_CPU_TROMP;USE_CPU_XENONCAT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalOptions>-D_WIN32_WINNT=0x0601 %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4068;4996;4503;4267;4180;4290;4244;4800;4334;4251</DisableSpecificWarnings>
       <MultiProcessorCompilation>false</MultiProcessorCompilation>
       <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
       <AdditionalIncludeDirectories>$(AMDAPPSDKROOT)\include\;..\3rdparty\include;$(CUDA_PATH)\include</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -79,8 +85,9 @@
       <AdditionalLibraryDirectories>.\trompequihash\pthreads\x64;..\3rdparty\libs\win64;$(AMDAPPSDKROOT)\lib\x86_64\</AdditionalLibraryDirectories>
     </Link>
     <Lib>
-      <AdditionalDependencies>
-      </AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -91,12 +98,19 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;USE_CUDA_TROMP;USE_CUDA_DJEZO;USE_CPU_TROMP;USE_CPU_XENONCAT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <PreprocessorDefinitions>_LIB;WIN32;NDEBUG;_CONSOLE;USE_CUDA_TROMP;USE_CUDA_DJEZO;USE_CPU_TROMP;USE_CPU_XENONCAT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
       <AdditionalOptions>-D_WIN32_WINNT=0x0601 %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4068;4996;4503;4267;4180;4290;4244;4800;4334;4251</DisableSpecificWarnings>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <AdditionalIncludeDirectories>$(AMDAPPSDKROOT)\include\;..\ocl_xpm;..\3rdparty\include</AdditionalIncludeDirectories>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -180,23 +194,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\cpu_tromp\cpu_tromp.vcxproj">
-      <Project>{6c180164-4dbe-45d7-85e0-7bdfacf3fc7b}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\cpu_tromp\cpu_tromp_sse.vcxproj">
-      <Project>{fcdbac4b-7097-4524-92e4-a33efaf07ca0}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\cpu_xenoncat\cpu_xenoncat.vcxproj">
-      <Project>{299e011b-5242-4eda-b2f2-73c9b48f12fd}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\cuda_djezo\cuda_djezo.vcxproj">
-      <Project>{268b10ad-d845-498b-8663-ab8911ca2039}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\cuda_tromp\cuda_tromp.vcxproj">
-      <Project>{33c2b469-f025-4223-b9b6-e69d42fea7d6}</Project>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -14,7 +14,4 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Library Include="..\3rdparty\libs\win64\pthreadVC2.lib" />
-  </ItemGroup>
 </Project>

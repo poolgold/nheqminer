@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{52ADBB18-78BA-4E46-BEFE-303622CE1DEA}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>automine</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(ProjectDir)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)\$(Platform)\Intermediate\$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(ProjectDir)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)\$(Platform)\Intermediate\$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN64;WIN32;_DEBUG;_CONSOLE;USE_CUDA_TROMP;USE_CUDA_DJEZO;USE_CPU_TROMP;USE_CPU_XENONCAT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\nheqminer\;$(AMDAPPSDKROOT)\include\;..\3rdparty\include;$(CUDA_PATH)\include</AdditionalIncludeDirectories>
+      <AdditionalOptions>-D_WIN32_WINNT=0x0601 %(AdditionalOptions)</AdditionalOptions>
+      <DisableSpecificWarnings>4068;4996;4503;4267;4180;4290;4244;4800;4334;4251</DisableSpecificWarnings>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>%(AdditionalDependencies);%CUDA_PATH%\lib\x64\cudart_static.lib;</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;USE_CUDA_TROMP;USE_CUDA_DJEZO;USE_CPU_TROMP;USE_CPU_XENONCAT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>$(AMDAPPSDKROOT)\include\;..\ocl_xpm;..\3rdparty\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalDependencies>%CUDA_PATH%\lib\x64\cudart_static.lib;%(AdditionalDependencies);</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="automine.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\blake2\blake2.vcxproj">
+      <Project>{e122c4d6-4fb8-4b69-a5fe-fd3680b869fd}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\cpu_tromp\cpu_tromp_sse.vcxproj">
+      <Project>{fcdbac4b-7097-4524-92e4-a33efaf07ca0}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\cpu_xenoncat\cpu_xenoncat.vcxproj">
+      <Project>{299e011b-5242-4eda-b2f2-73c9b48f12fd}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\cuda_djezo\cuda_djezo.vcxproj">
+      <Project>{268b10ad-d845-498b-8663-ab8911ca2039}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\cuda_tromp\cuda_tromp.vcxproj">
+      <Project>{33c2b469-f025-4223-b9b6-e69d42fea7d6}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\nheqminer\goldminer.vcxproj">
+      <Project>{a8019a3c-548b-4da8-80bb-7649c7768b18}</Project>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\3rdparty\libs\win64\pthreadVC2.lib" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\nheqminer\packages\boost.1.65.1.0\build\native\boost.targets" Condition="Exists('..\nheqminer\packages\boost.1.65.1.0\build\native\boost.targets')" />
+    <Import Project="..\nheqminer\packages\boost_atomic-vc140.1.65.1.0\build\native\boost_atomic-vc140.targets" Condition="Exists('..\nheqminer\packages\boost_atomic-vc140.1.65.1.0\build\native\boost_atomic-vc140.targets')" />
+    <Import Project="..\nheqminer\packages\boost_bzip2-vc140.1.65.1.0\build\native\boost_bzip2-vc140.targets" Condition="Exists('..\nheqminer\packages\boost_bzip2-vc140.1.65.1.0\build\native\boost_bzip2-vc140.targets')" />
+    <Import Project="..\nheqminer\packages\boost_chrono-vc140.1.65.1.0\build\native\boost_chrono-vc140.targets" Condition="Exists('..\nheqminer\packages\boost_chrono-vc140.1.65.1.0\build\native\boost_chrono-vc140.targets')" />
+    <Import Project="..\nheqminer\packages\boost_container-vc140.1.65.1.0\build\native\boost_container-vc140.targets" Condition="Exists('..\nheqminer\packages\boost_container-vc140.1.65.1.0\build\native\boost_container-vc140.targets')" />
+    <Import Project="..\nheqminer\packages\boost_context-vc140.1.65.1.0\build\native\boost_context-vc140.targets" Condition="Exists('..\nheqminer\packages\boost_context-vc140.1.65.1.0\build\native\boost_context-vc140.targets')" />
+    <Import Project="..\nheqminer\packages\boost_coroutine-vc140.1.65.1.0\build\native\boost_coroutine-vc140.targets" Condition="Exists('..\nheqminer\packages\boost_coroutine-vc140.1.65.1.0\build\native\boost_coroutine-vc140.targets')" />
+    <Import Project="..\nheqminer\packages\boost_date_time-vc140.1.65.1.0\build\native\boost_date_time-vc140.targets" Condition="Exists('..\nheqminer\packages\boost_date_time-vc140.1.65.1.0\build\native\boost_date_time-vc140.targets')" />
+    <Import Project="..\nheqminer\packages\boost_exception-vc140.1.65.1.0\build\native\boost_exception-vc140.targets" Condition="Exists('..\nheqminer\packages\boost_exception-vc140.1.65.1.0\build\native\boost_exception-vc140.targets')" />
+    <Import Project="..\nheqminer\packages\boost_fiber-vc140.1.65.1.0\build\native\boost_fiber-vc140.targets" Condition="Exists('..\nheqminer\packages\boost_fiber-vc140.1.65.1.0\build\native\boost_fiber-vc140.targets')" />
+    <Import Project="..\nheqminer\packages\boost_filesystem-vc140.1.65.1.0\build\native\boost_filesystem-vc140.targets" Condition="Exists('..\nheqminer\packages\boost_filesystem-vc140.1.65.1.0\build\native\boost_filesystem-vc140.targets')" />
+    <Import Project="..\nheqminer\packages\boost_graph-vc140.1.65.1.0\build\native\boost_graph-vc140.targets" Condition="Exists('..\nheqminer\packages\boost_graph-vc140.1.65.1.0\build\native\boost_graph-vc140.targets')" />
+    <Import Project="..\nheqminer\packages\boost_iostreams-vc140.1.65.1.0\build\native\boost_iostreams-vc140.targets" Condition="Exists('..\nheqminer\packages\boost_iostreams-vc140.1.65.1.0\build\native\boost_iostreams-vc140.targets')" />
+    <Import Project="..\nheqminer\packages\boost_locale-vc140.1.65.1.0\build\native\boost_locale-vc140.targets" Condition="Exists('..\nheqminer\packages\boost_locale-vc140.1.65.1.0\build\native\boost_locale-vc140.targets')" />
+    <Import Project="..\nheqminer\packages\boost_log-vc140.1.65.1.0\build\native\boost_log-vc140.targets" Condition="Exists('..\nheqminer\packages\boost_log-vc140.1.65.1.0\build\native\boost_log-vc140.targets')" />
+    <Import Project="..\nheqminer\packages\boost_log_setup-vc140.1.65.1.0\build\native\boost_log_setup-vc140.targets" Condition="Exists('..\nheqminer\packages\boost_log_setup-vc140.1.65.1.0\build\native\boost_log_setup-vc140.targets')" />
+    <Import Project="..\nheqminer\packages\boost_math_c99-vc140.1.65.1.0\build\native\boost_math_c99-vc140.targets" Condition="Exists('..\nheqminer\packages\boost_math_c99-vc140.1.65.1.0\build\native\boost_math_c99-vc140.targets')" />
+    <Import Project="..\nheqminer\packages\boost_math_c99f-vc140.1.65.1.0\build\native\boost_math_c99f-vc140.targets" Condition="Exists('..\nheqminer\packages\boost_math_c99f-vc140.1.65.1.0\build\native\boost_math_c99f-vc140.targets')" />
+    <Import Project="..\nheqminer\packages\boost_math_c99l-vc140.1.65.1.0\build\native\boost_math_c99l-vc140.targets" Condition="Exists('..\nheqminer\packages\boost_math_c99l-vc140.1.65.1.0\build\native\boost_math_c99l-vc140.targets')" />
+    <Import Project="..\nheqminer\packages\boost_math_tr1-vc140.1.65.1.0\build\native\boost_math_tr1-vc140.targets" Condition="Exists('..\nheqminer\packages\boost_math_tr1-vc140.1.65.1.0\build\native\boost_math_tr1-vc140.targets')" />
+    <Import Project="..\nheqminer\packages\boost_math_tr1f-vc140.1.65.1.0\build\native\boost_math_tr1f-vc140.targets" Condition="Exists('..\nheqminer\packages\boost_math_tr1f-vc140.1.65.1.0\build\native\boost_math_tr1f-vc140.targets')" />
+    <Import Project="..\nheqminer\packages\boost_math_tr1l-vc140.1.65.1.0\build\native\boost_math_tr1l-vc140.targets" Condition="Exists('..\nheqminer\packages\boost_math_tr1l-vc140.1.65.1.0\build\native\boost_math_tr1l-vc140.targets')" />
+    <Import Project="..\nheqminer\packages\boost_prg_exec_monitor-vc140.1.65.1.0\build\native\boost_prg_exec_monitor-vc140.targets" Condition="Exists('..\nheqminer\packages\boost_prg_exec_monitor-vc140.1.65.1.0\build\native\boost_prg_exec_monitor-vc140.targets')" />
+    <Import Project="..\nheqminer\packages\boost_program_options-vc140.1.65.1.0\build\native\boost_program_options-vc140.targets" Condition="Exists('..\nheqminer\packages\boost_program_options-vc140.1.65.1.0\build\native\boost_program_options-vc140.targets')" />
+    <Import Project="..\nheqminer\packages\boost_python-vc140.1.65.1.0\build\native\boost_python-vc140.targets" Condition="Exists('..\nheqminer\packages\boost_python-vc140.1.65.1.0\build\native\boost_python-vc140.targets')" />
+    <Import Project="..\nheqminer\packages\boost_python3-vc140.1.65.1.0\build\native\boost_python3-vc140.targets" Condition="Exists('..\nheqminer\packages\boost_python3-vc140.1.65.1.0\build\native\boost_python3-vc140.targets')" />
+    <Import Project="..\nheqminer\packages\boost_random-vc140.1.65.1.0\build\native\boost_random-vc140.targets" Condition="Exists('..\nheqminer\packages\boost_random-vc140.1.65.1.0\build\native\boost_random-vc140.targets')" />
+    <Import Project="..\nheqminer\packages\boost_regex-vc140.1.65.1.0\build\native\boost_regex-vc140.targets" Condition="Exists('..\nheqminer\packages\boost_regex-vc140.1.65.1.0\build\native\boost_regex-vc140.targets')" />
+    <Import Project="..\nheqminer\packages\boost_serialization-vc140.1.65.1.0\build\native\boost_serialization-vc140.targets" Condition="Exists('..\nheqminer\packages\boost_serialization-vc140.1.65.1.0\build\native\boost_serialization-vc140.targets')" />
+    <Import Project="..\nheqminer\packages\boost_signals-vc140.1.65.1.0\build\native\boost_signals-vc140.targets" Condition="Exists('..\nheqminer\packages\boost_signals-vc140.1.65.1.0\build\native\boost_signals-vc140.targets')" />
+    <Import Project="..\nheqminer\packages\boost_stacktrace_noop-vc140.1.65.1.0\build\native\boost_stacktrace_noop-vc140.targets" Condition="Exists('..\nheqminer\packages\boost_stacktrace_noop-vc140.1.65.1.0\build\native\boost_stacktrace_noop-vc140.targets')" />
+    <Import Project="..\nheqminer\packages\boost_stacktrace_windbg-vc140.1.65.1.0\build\native\boost_stacktrace_windbg-vc140.targets" Condition="Exists('..\nheqminer\packages\boost_stacktrace_windbg-vc140.1.65.1.0\build\native\boost_stacktrace_windbg-vc140.targets')" />
+    <Import Project="..\nheqminer\packages\boost_stacktrace_windbg_cached-vc140.1.65.1.0\build\native\boost_stacktrace_windbg_cached-vc140.targets" Condition="Exists('..\nheqminer\packages\boost_stacktrace_windbg_cached-vc140.1.65.1.0\build\native\boost_stacktrace_windbg_cached-vc140.targets')" />
+    <Import Project="..\nheqminer\packages\boost_system-vc140.1.65.1.0\build\native\boost_system-vc140.targets" Condition="Exists('..\nheqminer\packages\boost_system-vc140.1.65.1.0\build\native\boost_system-vc140.targets')" />
+    <Import Project="..\nheqminer\packages\boost_test_exec_monitor-vc140.1.65.1.0\build\native\boost_test_exec_monitor-vc140.targets" Condition="Exists('..\nheqminer\packages\boost_test_exec_monitor-vc140.1.65.1.0\build\native\boost_test_exec_monitor-vc140.targets')" />
+    <Import Project="..\nheqminer\packages\boost_thread-vc140.1.65.1.0\build\native\boost_thread-vc140.targets" Condition="Exists('..\nheqminer\packages\boost_thread-vc140.1.65.1.0\build\native\boost_thread-vc140.targets')" />
+    <Import Project="..\nheqminer\packages\boost_timer-vc140.1.65.1.0\build\native\boost_timer-vc140.targets" Condition="Exists('..\nheqminer\packages\boost_timer-vc140.1.65.1.0\build\native\boost_timer-vc140.targets')" />
+    <Import Project="..\nheqminer\packages\boost_type_erasure-vc140.1.65.1.0\build\native\boost_type_erasure-vc140.targets" Condition="Exists('..\nheqminer\packages\boost_type_erasure-vc140.1.65.1.0\build\native\boost_type_erasure-vc140.targets')" />
+    <Import Project="..\nheqminer\packages\boost_unit_test_framework-vc140.1.65.1.0\build\native\boost_unit_test_framework-vc140.targets" Condition="Exists('..\nheqminer\packages\boost_unit_test_framework-vc140.1.65.1.0\build\native\boost_unit_test_framework-vc140.targets')" />
+    <Import Project="..\nheqminer\packages\boost_wave-vc140.1.65.1.0\build\native\boost_wave-vc140.targets" Condition="Exists('..\nheqminer\packages\boost_wave-vc140.1.65.1.0\build\native\boost_wave-vc140.targets')" />
+    <Import Project="..\nheqminer\packages\boost_wserialization-vc140.1.65.1.0\build\native\boost_wserialization-vc140.targets" Condition="Exists('..\nheqminer\packages\boost_wserialization-vc140.1.65.1.0\build\native\boost_wserialization-vc140.targets')" />
+    <Import Project="..\nheqminer\packages\boost_zlib-vc140.1.65.1.0\build\native\boost_zlib-vc140.targets" Condition="Exists('..\nheqminer\packages\boost_zlib-vc140.1.65.1.0\build\native\boost_zlib-vc140.targets')" />
+    <Import Project="..\nheqminer\packages\boost-vc140.1.65.1.0\build\native\boost-vc140.targets" Condition="Exists('..\nheqminer\packages\boost-vc140.1.65.1.0\build\native\boost-vc140.targets')" />
+  </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\nheqminer\packages\boost.1.65.1.0\build\native\boost.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\nheqminer\packages\boost.1.65.1.0\build\native\boost.targets'))" />
+    <Error Condition="!Exists('..\nheqminer\packages\boost_atomic-vc140.1.65.1.0\build\native\boost_atomic-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\nheqminer\packages\boost_atomic-vc140.1.65.1.0\build\native\boost_atomic-vc140.targets'))" />
+    <Error Condition="!Exists('..\nheqminer\packages\boost_bzip2-vc140.1.65.1.0\build\native\boost_bzip2-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\nheqminer\packages\boost_bzip2-vc140.1.65.1.0\build\native\boost_bzip2-vc140.targets'))" />
+    <Error Condition="!Exists('..\nheqminer\packages\boost_chrono-vc140.1.65.1.0\build\native\boost_chrono-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\nheqminer\packages\boost_chrono-vc140.1.65.1.0\build\native\boost_chrono-vc140.targets'))" />
+    <Error Condition="!Exists('..\nheqminer\packages\boost_container-vc140.1.65.1.0\build\native\boost_container-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\nheqminer\packages\boost_container-vc140.1.65.1.0\build\native\boost_container-vc140.targets'))" />
+    <Error Condition="!Exists('..\nheqminer\packages\boost_context-vc140.1.65.1.0\build\native\boost_context-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\nheqminer\packages\boost_context-vc140.1.65.1.0\build\native\boost_context-vc140.targets'))" />
+    <Error Condition="!Exists('..\nheqminer\packages\boost_coroutine-vc140.1.65.1.0\build\native\boost_coroutine-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\nheqminer\packages\boost_coroutine-vc140.1.65.1.0\build\native\boost_coroutine-vc140.targets'))" />
+    <Error Condition="!Exists('..\nheqminer\packages\boost_date_time-vc140.1.65.1.0\build\native\boost_date_time-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\nheqminer\packages\boost_date_time-vc140.1.65.1.0\build\native\boost_date_time-vc140.targets'))" />
+    <Error Condition="!Exists('..\nheqminer\packages\boost_exception-vc140.1.65.1.0\build\native\boost_exception-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\nheqminer\packages\boost_exception-vc140.1.65.1.0\build\native\boost_exception-vc140.targets'))" />
+    <Error Condition="!Exists('..\nheqminer\packages\boost_fiber-vc140.1.65.1.0\build\native\boost_fiber-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\nheqminer\packages\boost_fiber-vc140.1.65.1.0\build\native\boost_fiber-vc140.targets'))" />
+    <Error Condition="!Exists('..\nheqminer\packages\boost_filesystem-vc140.1.65.1.0\build\native\boost_filesystem-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\nheqminer\packages\boost_filesystem-vc140.1.65.1.0\build\native\boost_filesystem-vc140.targets'))" />
+    <Error Condition="!Exists('..\nheqminer\packages\boost_graph-vc140.1.65.1.0\build\native\boost_graph-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\nheqminer\packages\boost_graph-vc140.1.65.1.0\build\native\boost_graph-vc140.targets'))" />
+    <Error Condition="!Exists('..\nheqminer\packages\boost_iostreams-vc140.1.65.1.0\build\native\boost_iostreams-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\nheqminer\packages\boost_iostreams-vc140.1.65.1.0\build\native\boost_iostreams-vc140.targets'))" />
+    <Error Condition="!Exists('..\nheqminer\packages\boost_locale-vc140.1.65.1.0\build\native\boost_locale-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\nheqminer\packages\boost_locale-vc140.1.65.1.0\build\native\boost_locale-vc140.targets'))" />
+    <Error Condition="!Exists('..\nheqminer\packages\boost_log-vc140.1.65.1.0\build\native\boost_log-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\nheqminer\packages\boost_log-vc140.1.65.1.0\build\native\boost_log-vc140.targets'))" />
+    <Error Condition="!Exists('..\nheqminer\packages\boost_log_setup-vc140.1.65.1.0\build\native\boost_log_setup-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\nheqminer\packages\boost_log_setup-vc140.1.65.1.0\build\native\boost_log_setup-vc140.targets'))" />
+    <Error Condition="!Exists('..\nheqminer\packages\boost_math_c99-vc140.1.65.1.0\build\native\boost_math_c99-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\nheqminer\packages\boost_math_c99-vc140.1.65.1.0\build\native\boost_math_c99-vc140.targets'))" />
+    <Error Condition="!Exists('..\nheqminer\packages\boost_math_c99f-vc140.1.65.1.0\build\native\boost_math_c99f-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\nheqminer\packages\boost_math_c99f-vc140.1.65.1.0\build\native\boost_math_c99f-vc140.targets'))" />
+    <Error Condition="!Exists('..\nheqminer\packages\boost_math_c99l-vc140.1.65.1.0\build\native\boost_math_c99l-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\nheqminer\packages\boost_math_c99l-vc140.1.65.1.0\build\native\boost_math_c99l-vc140.targets'))" />
+    <Error Condition="!Exists('..\nheqminer\packages\boost_math_tr1-vc140.1.65.1.0\build\native\boost_math_tr1-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\nheqminer\packages\boost_math_tr1-vc140.1.65.1.0\build\native\boost_math_tr1-vc140.targets'))" />
+    <Error Condition="!Exists('..\nheqminer\packages\boost_math_tr1f-vc140.1.65.1.0\build\native\boost_math_tr1f-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\nheqminer\packages\boost_math_tr1f-vc140.1.65.1.0\build\native\boost_math_tr1f-vc140.targets'))" />
+    <Error Condition="!Exists('..\nheqminer\packages\boost_math_tr1l-vc140.1.65.1.0\build\native\boost_math_tr1l-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\nheqminer\packages\boost_math_tr1l-vc140.1.65.1.0\build\native\boost_math_tr1l-vc140.targets'))" />
+    <Error Condition="!Exists('..\nheqminer\packages\boost_prg_exec_monitor-vc140.1.65.1.0\build\native\boost_prg_exec_monitor-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\nheqminer\packages\boost_prg_exec_monitor-vc140.1.65.1.0\build\native\boost_prg_exec_monitor-vc140.targets'))" />
+    <Error Condition="!Exists('..\nheqminer\packages\boost_program_options-vc140.1.65.1.0\build\native\boost_program_options-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\nheqminer\packages\boost_program_options-vc140.1.65.1.0\build\native\boost_program_options-vc140.targets'))" />
+    <Error Condition="!Exists('..\nheqminer\packages\boost_python-vc140.1.65.1.0\build\native\boost_python-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\nheqminer\packages\boost_python-vc140.1.65.1.0\build\native\boost_python-vc140.targets'))" />
+    <Error Condition="!Exists('..\nheqminer\packages\boost_python3-vc140.1.65.1.0\build\native\boost_python3-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\nheqminer\packages\boost_python3-vc140.1.65.1.0\build\native\boost_python3-vc140.targets'))" />
+    <Error Condition="!Exists('..\nheqminer\packages\boost_random-vc140.1.65.1.0\build\native\boost_random-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\nheqminer\packages\boost_random-vc140.1.65.1.0\build\native\boost_random-vc140.targets'))" />
+    <Error Condition="!Exists('..\nheqminer\packages\boost_regex-vc140.1.65.1.0\build\native\boost_regex-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\nheqminer\packages\boost_regex-vc140.1.65.1.0\build\native\boost_regex-vc140.targets'))" />
+    <Error Condition="!Exists('..\nheqminer\packages\boost_serialization-vc140.1.65.1.0\build\native\boost_serialization-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\nheqminer\packages\boost_serialization-vc140.1.65.1.0\build\native\boost_serialization-vc140.targets'))" />
+    <Error Condition="!Exists('..\nheqminer\packages\boost_signals-vc140.1.65.1.0\build\native\boost_signals-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\nheqminer\packages\boost_signals-vc140.1.65.1.0\build\native\boost_signals-vc140.targets'))" />
+    <Error Condition="!Exists('..\nheqminer\packages\boost_stacktrace_noop-vc140.1.65.1.0\build\native\boost_stacktrace_noop-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\nheqminer\packages\boost_stacktrace_noop-vc140.1.65.1.0\build\native\boost_stacktrace_noop-vc140.targets'))" />
+    <Error Condition="!Exists('..\nheqminer\packages\boost_stacktrace_windbg-vc140.1.65.1.0\build\native\boost_stacktrace_windbg-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\nheqminer\packages\boost_stacktrace_windbg-vc140.1.65.1.0\build\native\boost_stacktrace_windbg-vc140.targets'))" />
+    <Error Condition="!Exists('..\nheqminer\packages\boost_stacktrace_windbg_cached-vc140.1.65.1.0\build\native\boost_stacktrace_windbg_cached-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\nheqminer\packages\boost_stacktrace_windbg_cached-vc140.1.65.1.0\build\native\boost_stacktrace_windbg_cached-vc140.targets'))" />
+    <Error Condition="!Exists('..\nheqminer\packages\boost_system-vc140.1.65.1.0\build\native\boost_system-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\nheqminer\packages\boost_system-vc140.1.65.1.0\build\native\boost_system-vc140.targets'))" />
+    <Error Condition="!Exists('..\nheqminer\packages\boost_test_exec_monitor-vc140.1.65.1.0\build\native\boost_test_exec_monitor-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\nheqminer\packages\boost_test_exec_monitor-vc140.1.65.1.0\build\native\boost_test_exec_monitor-vc140.targets'))" />
+    <Error Condition="!Exists('..\nheqminer\packages\boost_thread-vc140.1.65.1.0\build\native\boost_thread-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\nheqminer\packages\boost_thread-vc140.1.65.1.0\build\native\boost_thread-vc140.targets'))" />
+    <Error Condition="!Exists('..\nheqminer\packages\boost_timer-vc140.1.65.1.0\build\native\boost_timer-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\nheqminer\packages\boost_timer-vc140.1.65.1.0\build\native\boost_timer-vc140.targets'))" />
+    <Error Condition="!Exists('..\nheqminer\packages\boost_type_erasure-vc140.1.65.1.0\build\native\boost_type_erasure-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\nheqminer\packages\boost_type_erasure-vc140.1.65.1.0\build\native\boost_type_erasure-vc140.targets'))" />
+    <Error Condition="!Exists('..\nheqminer\packages\boost_unit_test_framework-vc140.1.65.1.0\build\native\boost_unit_test_framework-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\nheqminer\packages\boost_unit_test_framework-vc140.1.65.1.0\build\native\boost_unit_test_framework-vc140.targets'))" />
+    <Error Condition="!Exists('..\nheqminer\packages\boost_wave-vc140.1.65.1.0\build\native\boost_wave-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\nheqminer\packages\boost_wave-vc140.1.65.1.0\build\native\boost_wave-vc140.targets'))" />
+    <Error Condition="!Exists('..\nheqminer\packages\boost_wserialization-vc140.1.65.1.0\build\native\boost_wserialization-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\nheqminer\packages\boost_wserialization-vc140.1.65.1.0\build\native\boost_wserialization-vc140.targets'))" />
+    <Error Condition="!Exists('..\nheqminer\packages\boost_zlib-vc140.1.65.1.0\build\native\boost_zlib-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\nheqminer\packages\boost_zlib-vc140.1.65.1.0\build\native\boost_zlib-vc140.targets'))" />
+    <Error Condition="!Exists('..\nheqminer\packages\boost-vc140.1.65.1.0\build\native\boost-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\nheqminer\packages\boost-vc140.1.65.1.0\build\native\boost-vc140.targets'))" />
+  </Target>
+</Project>
