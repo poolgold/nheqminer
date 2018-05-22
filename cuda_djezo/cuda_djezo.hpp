@@ -1,7 +1,7 @@
 #pragma once
 
 #ifdef _LIB
-#define DLL_CUDA_DJEZO __declspec(dllexport)
+#define DLL_CUDA_DJEZO 
 #else
 #define DLL_CUDA_DJEZO
 #endif

@@ -1,0 +1,21 @@
+[Desktop Entry]
+Encoding=UTF-8
+Exec=mw_screensaver_linux
+Icon=kscreensaver
+Type=Application
+Actions=InWindow;Root
+Name=mw_screensaver_linux (GL)
+
+[Desktop Action Setup]
+Exec=kxsconfig mw_screensaver_linux
+Name=Setup...
+
+[Desktop Action InWindow]
+Exec=kxsrun mw_screensaver_linux -- -window-id %w
+Name=Display in specified window
+NoDisplay=true
+ 
+[Desktop Action Root]
+Exec=kxsrun mw_screensaver_linux -- --root
+Name=Display in root window
+NoDisplay=true

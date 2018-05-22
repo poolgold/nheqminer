@@ -83,6 +83,7 @@ ISolver * MinerFactory::GenCUDASolver(int dev_id, int blocks, int threadsperbloc
 }
 // no OpenCL solvers at the moment keep for future reference
 ISolver * MinerFactory::GenOPENCLSolver(int platf_id, int dev_id) {
+		
 	if (_use_silentarmy) {
 		_solvers.push_back(new OPENCLSolverSilentarmy(platf_id, dev_id));
 		return _solvers.back();

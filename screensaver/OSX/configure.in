@@ -1,0 +1,95 @@
+#################################################################################
+#
+#        FILE: @file configure.ac
+#
+#        $Id: configure.in,v 1.3 2005/04/26 10:57:23 james Exp $
+#
+#        @author     James Mc Parlane
+#
+#        PROJECT:    Metawrap Server
+#
+#        COMPONENT:
+#
+#        @date       11 September 2001
+#
+#        COMMENTS:
+#
+#        MODIFIED:
+#
+#
+#        GENERAL INFO:
+#
+#                Massive Technologies 2000
+#                PO Box 567, Darlinghurst
+#                NSW, Australia
+#                email:  info@massive.com.au
+#                tel:    (+61-2) 9331 8699
+#                fax:    (+61-2) 9331 8699
+#
+#
+#        LICENSE:
+#
+#        Copyright (C) 2001  Massive Technologies, Pty Ltd.
+#
+#        This program is free software; you can redistribute it and/or modify
+#        it under the terms of the GNU General Public License as published by
+#        the Free Software Foundation; either version 2 of the License, or
+#        (at your option) any later version.
+#
+#        This program is distributed in the hope that it will be useful,
+#        but WITHOUT ANY WARRANTY; without even the implied warranty of
+#        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#        GNU General Public License for more details.
+#
+#        You should have received a copy of the GNU General Public License
+#        along with this program; if not, write to the Free Software
+#        Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+#
+#        $Log: configure.in,v $
+#        Revision 1.3  2005/04/26 10:57:23  james
+#        Creating global config file to define compiler to be used..
+#
+#        Revision 1.2  2005/04/21 13:48:14  metawrap
+#        Tweaks to build under linux
+#
+#        Revision 1.1  2005/04/17 07:37:54  james
+#        Added stub directories for screensaver code
+#
+#################################################################################
+
+dnl Process this file with autoconf to produce a configure script.
+AC_INIT(mw_utils_screensaver_osx.h)
+
+dnl Determine the build, host, and target system types.
+AC_CANONICAL_SYSTEM
+
+dnl Initialize automake.
+AM_INIT_AUTOMAKE(metawrap_utils_screensaver_osx, 0.0.1)
+AM_MAINTAINER_MODE
+
+dnl Choose C and C++ Compiler
+m4_include([../../../metawrap_cc.m4])
+
+AC_PROG_INSTALL
+
+# check for ranlib - not needed if we use AM_PROG_LIBTOOL
+AC_PROG_RANLIB
+
+# check for libtool - we want to be able to create shared libs
+AM_PROG_LIBTOOL
+
+# make sure we have make
+AC_PROG_MAKE_SET
+
+m4_include([../../../metawrap_app.m4])
+
+# Checks for libraries.
+
+# Checks for header files.
+
+# Checks for typedefs, structures, and compiler characteristics.
+
+# Checks for library functions.
+
+AC_OUTPUT([Makefile])
+

@@ -1908,7 +1908,7 @@ std::mutex dev_init;
 int dev_init_done[8] = { 0 };
 
 
-__host__ int compu32(const void *pa, const void *pb)
+__host__ int compu32_djezo(const void *pa, const void *pb)
 {
 	uint32_t a = *(uint32_t *)pa, b = *(uint32_t *)pb;
 	return a<b ? -1 : a == b ? 0 : +1;
@@ -1919,7 +1919,7 @@ __host__ bool duped(uint32_t* prf)
 {
 	uint32_t sortprf[512];
 	memcpy(sortprf, prf, sizeof(uint32_t) * 512);
-	qsort(sortprf, 512, sizeof(uint32_t), &compu32);
+	qsort(sortprf, 512, sizeof(uint32_t), &compu32_djezo);
 	for (uint32_t i = 1; i<512; i++)
 		if (sortprf[i] <= sortprf[i - 1])
 			return true;
@@ -1944,7 +1944,7 @@ __host__ void sort_pair(uint32_t *a, uint32_t len)
 }
 
 
-__host__ void setheader(blake2b_state *ctx, const char *header, const u32 headerLen, const char* nce, const u32 nonceLen)
+__host__ void setheader_djezo(blake2b_state *ctx, const char *header, const u32 headerLen, const char* nce, const u32 nonceLen)
 {
 	uint32_t le_N = WN;
 	uint32_t le_K = WK;
@@ -2056,7 +2056,7 @@ __host__ void eq_cuda_context<RB, SM, SSM, THREADS, PACKER>::solve(const char *t
 
 	int blocks = NBUCKETS;
 
-	setheader(&blake_ctx, tequihash_header, tequihash_header_len, nonce, nonce_len);
+	setheader_djezo(&blake_ctx, tequihash_header, tequihash_header_len, nonce, nonce_len);
 
 	// todo: improve
 	// djezo solver allows last 4 bytes of nonce to be iterrated

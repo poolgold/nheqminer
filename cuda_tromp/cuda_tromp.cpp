@@ -15,9 +15,26 @@ SOLVER_NAME::SOLVER_NAME(int platf_id, int dev_id)
 	device_id = dev_id;
 	getinfo(0, dev_id, m_gpu_name, m_sm_count, m_version);
 
-	// todo: determine default values for various GPUs here
-	threadsperblock = 64;
-	blocks = m_sm_count * 7;
+	int major, minor;
+	std::string::size_type n = m_version.find(".");
+	if (n != std::string::npos)
+	{
+		major = atoi(m_version.substr(0, n).c_str());
+		minor = atoi(m_version.substr(n + 1, m_version.length() - n - 1).c_str());
+
+		if (major < 2)
+		{
+			throw std::runtime_error("Only CUDA devices with SM 2.0 and higher are supported.");
+		}
+	}
+	else
+	{
+		throw std::runtime_error("Uknown Compute/SM version.");
+	}
+
+	// todo: determine default values for various GPUs here	
+	// This equation seems to be the sweet spot for a 560Ti
+	threadsperblock = blocks = m_sm_count * 8;	
 }
 
 

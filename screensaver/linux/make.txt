@@ -1,0 +1,18 @@
+metawrap@metawrap:~/metawrap/utils/screensaver/linux/rss-glx_0.8.0/reallyslick/cpp_src$ make mw_screensaver_linux
+if g++ -DHAVE_CONFIG_H -I. -I. -I../.. -I../../include -I../../src -I../include  -I/usr/X11R6/include  -g -Wall -MT driver.o -MD -MP -MF ".deps/driver.Tpo" \
+  -c -o driver.o `test -f 'driver.cpp' || echo './'`driver.cpp; \
+  then mv -f ".deps/driver.Tpo" ".deps/driver.Po"; \
+  else rm -f ".deps/driver.Tpo"; exit 1; \
+  fi
+  driver.cpp: In function `void mainLoop()':
+  driver.cpp:225: warning: comparison between signed and unsigned integer 
+     expressions
+     if g++ -DHAVE_CONFIG_H -I. -I. -I../.. -I../../include -I../../src -I../include  -I/usr/X11R6/include  -g -Wall -MT mw_screensaver_linux.o -MD -MP -MF ".deps/mw_screensaver_linux.Tpo" \
+       -c -o mw_screensaver_linux.o `test -f 'mw_screensaver_linux.cpp' || echo './'`mw_screensaver_linux.cpp; \
+       then mv -f ".deps/mw_screensaver_linux.Tpo" ".deps/mw_screensaver_linux.Po"; \
+       else rm -f ".deps/mw_screensaver_linux.Tpo"; exit 1; \
+       fi
+       /bin/sh ../../libtool --mode=link g++  -g -Wall   -o mw_screensaver_linux  driver.o mw_screensaver_linux.o  -lGLU -lGL  -L/usr/X11R6/lib  -lSM -lICE -lX11  -lm 
+       mkdir .libs
+       g++ -g -Wall -o mw_screensaver_linux driver.o mw_screensaver_linux.o  -lGLU -lGL -L/usr/X11R6/lib -lSM -lICE -lX11 -lm
+

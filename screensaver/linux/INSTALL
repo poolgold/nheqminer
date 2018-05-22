@@ -1,0 +1,15 @@
+
+The following packages seem to help
+
+    apt-get install libxt-dev
+    apt-get install xlibmesa-glu-dev
+    apt-get install libglut3-dev
+    apt-get install glutg3-dev
+    apt-get install freeglut3-dev
+    apt-get install glutg3-dev
+    apt-get install libglitz-glx1
+    apt-get install rss-glx
+    apt-get install libgl1-mesa-dev
+
+
+

@@ -28,7 +28,8 @@ cuda_djezo::cuda_djezo(int platf_id, int dev_id)
 		{
 			throw std::runtime_error("Only CUDA devices with SM 5.0 and higher are supported.");
 		}
-		else if (major == 5 && minor == 0)
+		 else 
+		if (major == 5 && minor == 0)
 		{
 			combo_mode = 2;
 		}

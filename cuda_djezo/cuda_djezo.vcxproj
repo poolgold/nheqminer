@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|x64">
       <Configuration>Debug</Configuration>
@@ -15,7 +15,6 @@
     <ClInclude Include="eqcuda.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\cpu_tromp\blake2\blake2bx.cpp" />
     <ClCompile Include="cuda_djezo.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -26,20 +25,23 @@
     <ProjectGuid>{268B10AD-D845-498B-8663-AB8911CA2039}</ProjectGuid>
     <RootNamespace>cuda_djezo</RootNamespace>
     <CudaToolkitCustomDir>$(CUDA_PATH_V8_0)</CudaToolkitCustomDir>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
+    <UseOfMfc>Static</UseOfMfc>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
+    <UseOfMfc>Static</UseOfMfc>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -54,6 +56,12 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(ProjectDir)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)\$(Platform)\Intermediate\$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(ProjectDir)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)\$(Platform)\Intermediate\$(ProjectName)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -62,6 +70,8 @@
       <PreprocessorDefinitions>WIN32;WIN64;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <DisableSpecificWarnings>4334;4316;4244;4996;4251;</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>..\3rdparty\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -71,26 +81,41 @@
       </IgnoreSpecificDefaultLibraries>
     </Link>
     <PostBuildEvent>
-      <Command>echo copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"
-copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
     <CudaCompile>
       <TargetMachinePlatform>64</TargetMachinePlatform>
       <CodeGeneration>compute_61,sm_61;compute_52,sm_52;compute_50,sm_50;</CodeGeneration>
       <PtxAsOptionV>true</PtxAsOptionV>
       <GPUDebugInfo>false</GPUDebugInfo>
+      <HostDebugInfo>false</HostDebugInfo>
+      <FastMath>true</FastMath>
     </CudaCompile>
+    <Lib>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>MaxSpeed</Optimization>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;WIN64;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
       <DisableSpecificWarnings>4334;4316;4244;4996;4251;</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>..\3rdparty\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -106,9 +131,19 @@ copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"</Command>
     <CudaCompile>
       <TargetMachinePlatform>64</TargetMachinePlatform>
       <CodeGeneration>compute_50,sm_50;compute_52,sm_52;compute_61,sm_61;</CodeGeneration>
-      <PtxAsOptionV>true</PtxAsOptionV>
+      <PtxAsOptionV>false</PtxAsOptionV>
       <AdditionalOptions>–Xptxas –dlcm=ca -Xptxas -dscm=cs %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>O2</Optimization>
+      <Runtime>MT</Runtime>
+      <RuntimeChecks>Default</RuntimeChecks>
+      <TypeInfo>false</TypeInfo>
     </CudaCompile>
+    <CudaLink>
+      <GPUDebugInfo>false</GPUDebugInfo>
+    </CudaLink>
+    <CudaLink>
+      <Optimization>O2</Optimization>
+    </CudaLink>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
