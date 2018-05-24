@@ -76,8 +76,8 @@ SOFTWARE.
 #include "eqcuda.hpp"
 #include "sm_32_intrinsics.h"
 
-#define WN	144
-#define WK	5
+#define WN	200
+#define WK	9
 #define NDIGITS		(WK+1)
 #define DIGITBITS	(WN/(NDIGITS))
 #define PROOFSIZE (1<<WK)
@@ -201,8 +201,8 @@ __device__ __forceinline__ uint2 ROR2(const uint2 a, const int offset)
 {
 	uint2 result;
 	{
-		asm("shf.r.wrap.b32 %0, %1, %2, %3;" : "=r"(result.x) : "r"(a.y), "r"(a.x), "r"(offset));
-		asm("shf.r.wrap.b32 %0, %1, %2, %3;" : "=r"(result.y) : "r"(a.x), "r"(a.y), "r"(offset));
+		//asm("shf.r.wrap.b32 %0, %1, %2, %3;" : "=r"(result.x) : "r"(a.y), "r"(a.x), "r"(offset));
+		//asm("shf.r.wrap.b32 %0, %1, %2, %3;" : "=r"(result.y) : "r"(a.x), "r"(a.y), "r"(offset));
 	}
 	return result;
 }

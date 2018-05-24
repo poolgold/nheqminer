@@ -25,6 +25,9 @@
   <ItemGroup>
     <CudaCompile Include="equi_miner.cu">
       <CodeGeneration>compute_52,sm_52;compute_50,sm_50</CodeGeneration>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release7.5|x64'">
+      </DeploymentContent>
+      <FileType>Document</FileType>
     </CudaCompile>
   </ItemGroup>
   <PropertyGroup Label="Globals">

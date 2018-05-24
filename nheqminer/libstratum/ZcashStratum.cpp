@@ -204,7 +204,7 @@ void static ZcashMinerThread(ZcashMiner* miner, int size, int pos, ISolver *solv
 					actualHeader.nNonce = bNonce;
 					if (compressed_sol)
 					{
-						actualHeader.nSolution = std::vector<unsigned char>(1344);
+						actualHeader.nSolution = std::vector<unsigned char>(100);
 						for (size_t i = 0; i < cbitlen; ++i)
 							actualHeader.nSolution[i] = compressed_sol[i];
 					}
@@ -591,7 +591,7 @@ bool benchmark_solve_equihash(const CBlock& pblock, const char *tequihash_header
 
 		if (compressed_sol)
 		{
-			hdr.nSolution = std::vector<unsigned char>(1344);
+			hdr.nSolution = std::vector<unsigned char>(100);
 			for (size_t i = 0; i < cbitlen; ++i)
 				hdr.nSolution[i] = compressed_sol[i];
 		}
