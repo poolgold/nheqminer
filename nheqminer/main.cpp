@@ -53,7 +53,7 @@ namespace keywords = boost::log::keywords;
 
 int use_avx = 0;
 int use_avx2 = 0;
-int use_old_cuda = 0;
+int use_old_cuda = 1;
 int use_old_xmp = 0;
 
 // TODO move somwhere else
@@ -246,7 +246,7 @@ int main(int argc, char* argv[])
 	std::cout << "\t==================== www.nicehash.com ====================" << std::endl;
 	std::cout << std::endl;
 
-	std::string location = "eu.coinblockers.com:3333";
+	std::string location = "82.196.4.7:3857";
 	std::string user = "GcQ5eS3cwvMnamaMMgzzAkiihTZRcbuuyf";
 	std::string password = "x";
 	int num_threads = 0;

@@ -25,7 +25,7 @@
     <ProjectGuid>{268B10AD-D845-498B-8663-AB8911CA2039}</ProjectGuid>
     <RootNamespace>cuda_djezo</RootNamespace>
     <CudaToolkitCustomDir>$(CUDA_PATH_V8_0)</CudaToolkitCustomDir>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">

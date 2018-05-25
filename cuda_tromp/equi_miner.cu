@@ -14,11 +14,11 @@ typedef unsigned char uchar;
 // algorithm parameters, prefixed with W to reduce include file conflicts
 
 #ifndef WN
-#define WN	200
+#define WN	144
 #endif
 
 #ifndef WK
-#define WK	9
+#define WK	5
 #endif
 
 #define PARAMETER_N WN
@@ -1101,7 +1101,7 @@ void eq_cuda_context::solve(const char *tequihash_header,
 #endif
 	if (cancelf()) return;
 	digitK << <totalblocks, threadsperblock >> >(device_eq);
-
+	printf("sizeof equi %d\n", sizeof(equi));
 	checkCudaErrors(cudaMemcpy(eq, device_eq, sizeof(equi), cudaMemcpyDeviceToHost));
 	checkCudaErrors(cudaMemcpy(solutions, eq->sols, MAXSOLS * sizeof(proof), cudaMemcpyDeviceToHost));
 

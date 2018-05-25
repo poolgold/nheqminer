@@ -14,7 +14,7 @@
     <ProjectGuid>{6FF7D209-05A3-4550-93CC-211D33503719}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>nheqminer</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
@@ -231,8 +231,10 @@
     <Import Project="packages\boost_wave-vc140.1.65.1.0\build\native\boost_wave-vc140.targets" Condition="Exists('packages\boost_wave-vc140.1.65.1.0\build\native\boost_wave-vc140.targets')" />
     <Import Project="packages\boost_wserialization-vc140.1.65.1.0\build\native\boost_wserialization-vc140.targets" Condition="Exists('packages\boost_wserialization-vc140.1.65.1.0\build\native\boost_wserialization-vc140.targets')" />
     <Import Project="packages\boost_zlib-vc140.1.65.1.0\build\native\boost_zlib-vc140.targets" Condition="Exists('packages\boost_zlib-vc140.1.65.1.0\build\native\boost_zlib-vc140.targets')" />
-    <Import Project="packages\boost-vc140.1.65.1.0\build\native\boost-vc140.targets" Condition="Exists('packages\boost-vc140.1.65.1.0\build\native\boost-vc140.targets')" />
     <Import Project="packages\pthreads.redist.2.9.1.4\build\native\pthreads.redist.targets" Condition="Exists('packages\pthreads.redist.2.9.1.4\build\native\pthreads.redist.targets')" />
+    <Import Project="packages\boost_atomic-vc141.1.65.1.0\build\native\boost_atomic-vc141.targets" Condition="Exists('packages\boost_atomic-vc141.1.65.1.0\build\native\boost_atomic-vc141.targets')" />
+    <Import Project="packages\boost_bzip2-vc141.1.65.1.0\build\native\boost_bzip2-vc141.targets" Condition="Exists('packages\boost_bzip2-vc141.1.65.1.0\build\native\boost_bzip2-vc141.targets')" />
+    <Import Project="packages\boost-vc141.1.65.1.0\build\native\boost-vc141.targets" Condition="Exists('packages\boost-vc141.1.65.1.0\build\native\boost-vc141.targets')" />
   </ImportGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
@@ -319,7 +321,9 @@
     <Error Condition="!Exists('packages\boost_wave-vc140.1.65.1.0\build\native\boost_wave-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\boost_wave-vc140.1.65.1.0\build\native\boost_wave-vc140.targets'))" />
     <Error Condition="!Exists('packages\boost_wserialization-vc140.1.65.1.0\build\native\boost_wserialization-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\boost_wserialization-vc140.1.65.1.0\build\native\boost_wserialization-vc140.targets'))" />
     <Error Condition="!Exists('packages\boost_zlib-vc140.1.65.1.0\build\native\boost_zlib-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\boost_zlib-vc140.1.65.1.0\build\native\boost_zlib-vc140.targets'))" />
-    <Error Condition="!Exists('packages\boost-vc140.1.65.1.0\build\native\boost-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\boost-vc140.1.65.1.0\build\native\boost-vc140.targets'))" />
     <Error Condition="!Exists('packages\pthreads.redist.2.9.1.4\build\native\pthreads.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\pthreads.redist.2.9.1.4\build\native\pthreads.redist.targets'))" />
+    <Error Condition="!Exists('packages\boost_atomic-vc141.1.65.1.0\build\native\boost_atomic-vc141.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\boost_atomic-vc141.1.65.1.0\build\native\boost_atomic-vc141.targets'))" />
+    <Error Condition="!Exists('packages\boost_bzip2-vc141.1.65.1.0\build\native\boost_bzip2-vc141.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\boost_bzip2-vc141.1.65.1.0\build\native\boost_bzip2-vc141.targets'))" />
+    <Error Condition="!Exists('packages\boost-vc141.1.65.1.0\build\native\boost-vc141.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\boost-vc141.1.65.1.0\build\native\boost-vc141.targets'))" />
   </Target>
 </Project>
